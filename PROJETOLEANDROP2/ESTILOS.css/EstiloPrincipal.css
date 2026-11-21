@@ -10,32 +10,47 @@
 }
 
 body{
+    background-color: black;
     background-image: url(../IMAGENS/branco.png);
     background-repeat: no-repeat;
     background-size: cover;
+    transition: 1s;
 }
 
 header  {
-    background-color: rgba(255, 255, 255, 0.418);
+    /* background-color: rgba(255, 255, 255, 0.418); */
+    /* backdrop-filter: blur(15px); */
     padding: 25px;
+    color: white;
+    /* border-bottom: 2px, solid, rgba(255, 255, 255, 0.1); */
+
 }
 
 main{
-    
+    user-select: none;
     height: 65vh;
     display: grid;
     place-items: center;
+    color: white;
+    padding: 40px;
+    
 }
 
 main h2{
+    filter: drop-shadow(0 2mm 2mm rgba(255, 255, 255, 0.2));
     font-size: 40px;
-    background-color: rgba(255, 255, 255, 0.418);
-    width: 300px;
+    /* background-color: rgba(255, 255, 255, 0.418); */
+    /* width: 300px; */
     text-align: center;
-    padding: 50px;
 }
 
-main a {
+main #pc{
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+}
+
+/* main a {
     font-size: 30px;
     background-color: rgba(255, 255, 255, 0.418);
     text-decoration: none;
@@ -43,7 +58,50 @@ main a {
     padding: 10px;
     border-radius: 50%;
     
+} */
+
+main #font-times
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    -webkit-transform:scale(1,1.2); /* Safari and Chrome */
+    -moz-transform:scale(1,1.2); /* Firefox */
+    -ms-transform:scale(1,1.2); /* IE 9 */
+    -o-transform:scale(1,1.2); /* Opera */
+    transform:scale(1,1.4); /* W3C */
+    margin-bottom: 15px;
 }
 
+#logo{
+    font-weight: 900;
+}
 
+main #dificil{
+    font-size: 90px;
+    position: sticky;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    /* color: cor do tema que a pessoa escolheu */
+}
 
+main button{
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 12%;
+    border: none;
+    transition: 0.25s;
+}
+
+main button:hover
+{
+    cursor: pointer;
+    background-color: rgba(20, 20, 20, 0.8);
+    display: inline-block;  
+    transform: scale(1.1,1.1);
+    transition: 0.1s;
+
+}
