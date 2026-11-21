@@ -1,10 +1,18 @@
-let dificilDiv = document.querySelectorAll("#dificil")
-let fonts = [
+const dificilDiv = document.querySelectorAll("#dificil");
+const botaoInicial = document.getElementById("botaoInicio");
+const main_text = document.getElementById("main_text");
+const main = document.getElementById("main");
+// const coresTema = 
+// const corTema = 
+
+
+
+// Troca a fonte do "DIFÍCIL"
+fontName = 0;
+const fonts = [
 'Courier New', 'monospace',
 'Comic Sans MS', 'tecnologico', 'Times New Roman', 'Helvetica', 'Impact'
 ];
-
-fontName = 0;
 function trocaFonte(){
 
     
@@ -22,3 +30,10 @@ function trocaFonte(){
 setInterval(() => {
     trocaFonte();
 }, 500);
+
+// Animação inicial da escolha de cores
+
+botaoInicial.addEventListener("click", function(){
+    main_text.className = "colors-theme-text";
+    main.className = "colors-theme-text";
+});
