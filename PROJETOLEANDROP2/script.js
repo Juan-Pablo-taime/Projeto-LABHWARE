@@ -8,7 +8,7 @@ const main = document.getElementById("main");
 
 
 // Troca a fonte do "DIFÍCIL"
-fontName = 0;
+let fontName = 0;
 const fonts = [
 'Courier New', 'monospace',
 'Comic Sans MS', 'tecnologico', 'Times New Roman', 'Helvetica', 'Impact'
@@ -18,19 +18,21 @@ function trocaFonte(){
     
     dificilDiv.forEach(e =>{
             
-            let LastFontName = fontName;
+            let lastFontName = fontName;
             do {
                 fontName = Math.floor(Math.random() * fonts.length)
-            } while (LastFontName === fontName);
+            } while (lastFontName === fontName);
             e.style.fontFamily = fonts[fontName];
             // console.log(fonts[fontName])
         });
 }
 
-setInterval(() => {
-    trocaFonte();
-}, 500);
-
+if (main_text && main_text.className === "main-text") {
+    setInterval(() => {
+        if (main_text.className === "main-text")
+            trocaFonte();
+    }, 500);
+}
 // Animação inicial da escolha de cores
 
 botaoInicial.addEventListener("click", function(){
