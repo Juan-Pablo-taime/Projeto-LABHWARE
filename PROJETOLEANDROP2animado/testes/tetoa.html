@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #conteudo {
+    view-transition-name: troca-conteudo;
+}
+
+/* Estado antigo saindo da tela */
+::view-transition-old(troca-conteudo) {
+    animation: sair 0.3s ease-in forwards;
+}
+
+/* Estado novo entrando na tela */
+::view-transition-new(troca-conteudo) {
+    animation: entrar 0.3s ease-out forwards;
+}
+
+@keyframes sair {
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+/* Desativa a animação se o usuário preferir movimento reduzido no sistema */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(troca-conteudo),
+    ::view-transition-new(troca-conteudo) {
+        animation: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Projeto</h1>
+    </header>
+
+    <main id="conteudo">
+        <h2>Tela Inicial</h2>
+        <p>Clique no botão para trocar o conteúdo com animação.</p>
+        <button class="btn-nav">Avançar</button>
+    </main>
+
+<script>
+    const main = document.getElementById("conteudo");
+let etapa = 0;
+
+const telas = [
+    `
+        <h2>Tela Inicial</h2>
+        <p>Clique no botão para trocar o conteúdo com animação.</p>
+        <button class="btn-nav">Avançar</button>
+    `,
+    `
+        <h2>Etapa 1: Escolha o Processador</h2>
+        <p>O conteúdo foi substituído no DOM com transição nativa.</p>
+        <button class="btn-nav">Voltar</button>
+    `
+];
+
+function atualizarDOM() {
+    etapa = (etapa + 1) % telas.length;
+    main.innerHTML = telas[etapa];
+}
+
+main.addEventListener("click", (event) => {
+    if (!event.target.closest(".btn-nav")) return;
+
+    // Fallback para navegadores sem suporte
+    if (!document.startViewTransition) {
+        atualizarDOM();
+        return;
+    }
+
+    // Inicia a transição nativa
+    document.startViewTransition(() => {
+        atualizarDOM();
+    });
+});
+</script>
+</body>
+</html>
