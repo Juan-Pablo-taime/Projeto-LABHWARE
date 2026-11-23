@@ -47,15 +47,16 @@ botaoInicial.addEventListener("click", function(){
                 <input type="button" class="butcores" id="butciano">
             </div>`
     botaoInicial.remove()
-
-});
-if (!documento.body.contains(botaoInicial)){
-
     document.getElementById("butbranco").addEventListener("click", function(){
         document.body.style.backgroundImage = "url('./IMAGENS/verde.png')"
-        alert("debug")
+        
     });
-}
+
+});
+
+
+    
+
 
 
 
