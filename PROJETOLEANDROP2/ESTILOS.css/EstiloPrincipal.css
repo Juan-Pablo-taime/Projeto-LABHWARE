@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     font-family: tecnologico;
-    /* border: 1px, red, solid; */
+    /*border: 3px, red, solid;*/ 
 }
 
 body {
@@ -117,7 +117,7 @@ main #dificil {
     /* color: cor do tema que a pessoa escolheu */
 }
 
-main button {
+main #botaoInicio {
     font-size: 15px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -127,10 +127,40 @@ main button {
     transition: 0.25s;
 }
 
-main button:hover {
+main #botaoInicio:hover {
     cursor: pointer;
     background-color: rgba(20, 20, 20, 0.8);
     display: inline-block;
     transform: scale(1.1, 1.1);
     transition: 0.1s;
+}
+
+.butcores {
+    width: 8vh;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+}
+
+.butcores:hover {
+    transform: scale(1.2,1.2);
+    transition: transform 1s ;
+}
+
+#coresmenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#butbranco {
+    background-color: white;
+}
+
+#butbranco:hover {
+    
+    filter: drop-shadow(0 3mm 3mm rgba(255, 255, 255, 0.2));
 }

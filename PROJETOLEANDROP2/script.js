@@ -38,4 +38,25 @@ if (main_text && main_text.className === "main-text") {
 botaoInicial.addEventListener("click", function(){
     main_text.className = "colors-theme-text";
     main.className = "colors-theme-text";
+    main_text.innerHTML = `<h2> escolha sua cor </h2> <br>
+            <div id="coresmenu">
+                <input type="button" class="butcores" id="butbranco">
+                <input type="button" class="butcores" id="butvermelho">
+                <input type="button" class="butcores" id="butlaranja">
+                <input type="button" class="butcores" id="butverde">
+                <input type="button" class="butcores" id="butciano">
+            </div>`
+    botaoInicial.remove()
+
 });
+if (!documento.body.contains(botaoInicial)){
+
+    document.getElementById("butbranco").addEventListener("click", function(){
+        document.body.style.backgroundImage = "url('./IMAGENS/verde.png')"
+        alert("debug")
+    });
+}
+
+
+
+
