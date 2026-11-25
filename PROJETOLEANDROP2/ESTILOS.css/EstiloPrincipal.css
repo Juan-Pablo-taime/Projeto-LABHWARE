@@ -7,15 +7,15 @@
     margin: 0;
     padding: 0;
     font-family: tecnologico;
-    /*border: 3px, red, solid;*/ 
+    /* border: 3px, red, solid;  */
 }
 
 body {
     background-color: black;
-    background-image: url(../IMAGENS/branco.png);
+    background-image: url(../IMAGENS/preto.png);
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 1s;
+    transition: 0.5s ease-out all;
 }
 
 header {
@@ -45,7 +45,8 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: left 1s ease-in-out,
-        width 1s ease-in-out;
+        width 2s ease-in-out,
+        top 0.85s ease-in-out;
 }
 
 .colors-theme-text {
@@ -55,6 +56,12 @@ main {
     /* text-align: left; */
     white-space: nowrap;
     width: 100%;
+
+}
+
+.MenuMontador {
+    top: 10%;
+    left: 50%;
 }
 
 main h2 {
@@ -64,7 +71,8 @@ main h2 {
     max-width: 450px;
     min-width: 0;
     transition: left 1s ease-in-out,
-        width 2s ease-in-out;
+        width 2s ease-in-out,
+        top 0.85s ease-in-out;
 }
 
 .colors-theme-text h2 {
@@ -155,12 +163,52 @@ main #botaoInicio:hover {
     flex-direction: row;
     justify-content: space-between;
 }
+#butbranco:hover, #butvermelho:hover, #butverde:hover, #butlaranja:hover, #butciano:hover{
+    transition: 1s ease all;
+}
 
 #butbranco {
-    background-color: white;
+    background-color: rgb(222, 222, 222);
+
 }
 
 #butbranco:hover {
-    
+    background-color: rgb(255, 255, 255);
     filter: drop-shadow(0 3mm 3mm rgba(255, 255, 255, 0.2));
+}
+
+#butvermelho {
+    background-color: rgb(209 78 119);
+}
+
+#butvermelho:hover {
+    background-color: rgb(255 36 59);
+    filter: drop-shadow(0 3mm 3mm rgba(209, 78, 117, 0.2));
+}
+
+#butlaranja {
+    background-color: rgb(189 132 109);
+}
+
+#butlaranja:hover {
+    background-color: rgb(232, 88, 31);
+    filter: drop-shadow(0 3mm 3mm rgba(189, 132, 109, 0.2));
+}
+
+#butverde {
+    background-color: rgb(144 235 119);
+}
+
+#butverde:hover {
+    background-color: rgb(93, 212, 60);
+    filter: drop-shadow(0 3mm 3mm rgba(144, 235, 119, 0.2));
+}
+
+#butciano {
+    background-color: rgb(0 224 239);
+}
+
+#butciano:hover{
+    background-color: rgb(0, 239, 227);
+    filter: drop-shadow(0 3mm 3mm rgba(0, 224, 239, 0.2));
 }

@@ -35,6 +35,93 @@ if (main_text && main_text.className === "main-text") {
 }
 // Animação inicial da escolha de cores
 
+            
+class TrocaFundo{
+    constructor(){
+        let clickedButton = false;
+        var butlaranja = document.getElementById("butlaranja");
+        var butvermelho = document.getElementById("butvermelho");
+        var butverde = document.getElementById("butverde");
+        var butbranco = document.getElementById("butbranco");
+        var butciano = document.getElementById("butciano");
+
+        
+
+        butvermelho.addEventListener("mouseenter", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/vermelho.png')"
+        });
+        butverde.addEventListener("mouseenter", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/verde.png')"
+        });
+        butlaranja.addEventListener("mouseenter", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/laranja.png')"
+        });
+        butciano.addEventListener("mouseenter", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/ciano.png')"
+        });
+
+        butvermelho.addEventListener("click", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/vermelho.png')"
+            clickedButton = true;
+        });
+        butverde.addEventListener("click", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/verde.png')"
+            clickedButton = true;
+        });
+        butlaranja.addEventListener("click", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/laranja.png')"
+            clickedButton = true;
+        });
+        butciano.addEventListener("click", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/ciano.png')"
+            clickedButton = true;
+            
+        });
+        butbranco.addEventListener("mouseenter", function(){
+            document.body.style.backgroundImage = "url('./IMAGENS/branco.png')"
+        });
+    
+        butvermelho.addEventListener("mouseleave", function(){
+            if (clickedButton == false)
+                document.body.style.backgroundImage = "url('./IMAGENS/preto.png')"
+        });
+        butverde.addEventListener("mouseleave", function(){
+            if (clickedButton == false)
+                document.body.style.backgroundImage = "url('./IMAGENS/preto.png')"
+        });
+        butlaranja.addEventListener("mouseleave", function(){
+            if (clickedButton == false)
+                document.body.style.backgroundImage = "url('./IMAGENS/preto.png')"
+        });
+        butciano.addEventListener("mouseleave", function(){
+            if (clickedButton == false)
+                document.body.style.backgroundImage = "url('./IMAGENS/preto.png')"
+        });
+        butbranco.addEventListener("mouseleave", function(){
+            if (clickedButton == false)
+                document.body.style.backgroundImage = "url('./IMAGENS/preto.png')"
+        });
+
+        const menuMontador = new MenuMontador();            
+        
+
+
+    } 
+}
+
+class MenuMontador {
+    constructor(){
+        const butcores = document.querySelectorAll(".butcores")
+        butcores.forEach(element => {
+            element.addEventListener("click", function(){
+                main_text.className = "MenuMontador";
+                main.className = "MenuMontador";
+                main_text.innerHTML = `<h2> Monte seu PC </h2>`
+            });
+        });
+    }
+}
+
 botaoInicial.addEventListener("click", function(){
     main_text.className = "colors-theme-text";
     main.className = "colors-theme-text";
@@ -47,16 +134,8 @@ botaoInicial.addEventListener("click", function(){
                 <input type="button" class="butcores" id="butciano">
             </div>`
     botaoInicial.remove()
-    document.getElementById("butbranco").addEventListener("click", function(){
-        document.body.style.backgroundImage = "url('./IMAGENS/verde.png')"
-        
-    });
-
+    const trocaFundo = new TrocaFundo();
 });
-
-
-    
-
 
 
 
