@@ -120,32 +120,32 @@ class MenuMontador {
                 <div id="divComponentesPC">
                     
                     <div id="divComponenteCPU" class="botoesComponentesPC">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\cpu.png" alt="Processador">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\cpu.png" alt="Processador" id="botaoCPU">
                     </div>
                 
                     <div id="divComponenteServer" class="botoesComponentesPC">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\server.png" alt="Gabinete">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\server.png" alt="Gabinete" id="botaoCPU">
                     </div>
 
                     <div class="componentePCIndividual"></div>
 
                     <div id="divComponentePlacaMae" class="botoesComponentesPC">
-                    <img src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png" alt="Placa-mãe">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png" alt="Placa-mãe" id="botaoCPU">
                     </div>
 
                     <div class="componentePCIndividual"></div>
 
                     <div id="divComponenteGC" class="botoesComponentesPC">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\graphic-card.png" alt="Placa de vídeo">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\graphic-card.png" alt="Placa de vídeo" id="botaoCPU">
                     </div>
 
                     <div id="divComponenteHDD" class="botoesComponentesPC">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\hdd.png" alt="Unidade de armazenamento">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\hdd.png" alt="Unidade de armazenamento" id="botaoCPU">
                     </div>
                     
                     <div class="componentePCIndividual"></div>
                     <div id="divComponenteRAM" class="botoesComponentesPC">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\ram.png" alt="Memória RAM">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\ram.png" alt="Memória RAM" id="botaoCPU">
                     </div>
                 `;
             });

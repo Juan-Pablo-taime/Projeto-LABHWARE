@@ -248,7 +248,7 @@ main #botaoInicio:hover {
     width: fit-content;
     height: fit-content;
 }
-#divComponentesPC img{
+#divComponentesPC input{
     width: 150px;
     height: 150px;
     filter: invert(100%);
@@ -260,11 +260,20 @@ main #botaoInicio:hover {
 #divComponenteRAM{
     transform: translateY(-20%);
 }
-.espaçoEntreComponentes{
+/* .espaçoEntreComponentes{
     padding-left: 50px;
     padding-right: 50px;
-}
+} */
 
 #divComponentePlacaMae, #divComponenteRAM{
     margin: auto;
+}
+.botoesComponentesPC{
+    transition: scale 0.5s ease-out, filter 0.5s ease-out;
+}
+.botoesComponentesPC:hover{
+    scale: 1.2;
+    transition: scale 0.1s ease-in-out, filter 0.1s ease-in-out;
+    filter: drop-shadow(0 0mm 4mm rgba(255, 255, 255, 0.8));
+
 }
