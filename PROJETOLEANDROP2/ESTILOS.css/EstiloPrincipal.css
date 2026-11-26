@@ -59,7 +59,7 @@ main {
 
 }
 
-.MenuMontador {
+.MenuMontador{
     top: 10%;
     left: 50%;
 }
@@ -211,4 +211,39 @@ main #botaoInicio:hover {
 #butciano:hover{
     background-color: rgb(0, 239, 227);
     filter: drop-shadow(0 3mm 3mm rgba(0, 224, 239, 0.2));
+}
+
+#divComponentesPC{
+    position: absolute;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    transform: translateX(-50%);
+    *{
+        border: 3px, magenta, solid;
+    }
+    
+}
+#divComponentesPC div{
+    width: 200px;
+    height: 200px;
+
+}
+#divComponentesPC img{
+        width: 100px;
+    height: 100px;
+    filter: invert(100%);
+}
+
+.botoesComponentesPC{
+    /* border: 3px, magenta, solid; */
+    grid-row: span 2;
+}
+
+.botoesComponentesPC:nth-child(1), .botoesComponentesPC:nth-child(2){
+    grid-row: 2 / span 2;
+}
+.divfantasma::before{
+    
+    width: 0;
+    height: 0;
 }
