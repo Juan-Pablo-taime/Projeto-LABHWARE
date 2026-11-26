@@ -118,24 +118,33 @@ class MenuMontador {
                `
                 <h2> Monte seu PC </h2>
                 <div id="divComponentesPC">
+                    
                     <div id="divComponenteCPU" class="botoesComponentesPC">
                         <img src=".\\IMAGENS\\icons\\pc-parts\\cpu.png" alt="Processador">
                     </div>
+                
                     <div id="divComponenteServer" class="botoesComponentesPC">
                         <img src=".\\IMAGENS\\icons\\pc-parts\\server.png" alt="Gabinete">
                     </div>
-                    <div id="divComponentePlacaMae" class="botoesComponentesPC" class="componentePCIndividual">
-                        <img src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png" alt="Placa-mãe">
+
+                    <div class="componentePCIndividual"></div>
+
+                    <div id="divComponentePlacaMae" class="botoesComponentesPC">
+                    <img src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png" alt="Placa-mãe">
                     </div>
-                    <div class="divfantasma"></div>
+
+                    <div class="componentePCIndividual"></div>
+
                     <div id="divComponenteGC" class="botoesComponentesPC">
                         <img src=".\\IMAGENS\\icons\\pc-parts\\graphic-card.png" alt="Placa de vídeo">
                     </div>
+
                     <div id="divComponenteHDD" class="botoesComponentesPC">
                         <img src=".\\IMAGENS\\icons\\pc-parts\\hdd.png" alt="Unidade de armazenamento">
                     </div>
-                    <div class="divfantasma"></div>
-                    <div id="divComponenteRAM" class="botoesComponentesPC" class="componentePCIndividual">
+                    
+                    <div class="componentePCIndividual"></div>
+                    <div id="divComponenteRAM" class="botoesComponentesPC">
                         <img src=".\\IMAGENS\\icons\\pc-parts\\ram.png" alt="Memória RAM">
                     </div>
                 `;

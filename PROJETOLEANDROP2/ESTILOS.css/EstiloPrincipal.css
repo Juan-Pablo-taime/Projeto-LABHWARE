@@ -56,12 +56,27 @@ main {
     /* text-align: left; */
     white-space: nowrap;
     width: 100%;
+    height: fit-content;
 
 }
 
 .MenuMontador{
     top: 10%;
+    /* padding-left: 100%;
+    padding-right: 100%; */
+    width: 100%;
+    height: fit-content;
+}
+
+#main_text .MenuMontador{
     left: 50%;
+    transform: translateX(50%);
+    width: fit-content;
+    height: fit-content;
+}
+
+.MenuMontador h2{
+    white-space: nowrap;
 }
 
 main h2 {
@@ -214,36 +229,42 @@ main #botaoInicio:hover {
 }
 
 #divComponentesPC{
+    margin-top: 10vh;
     position: absolute;
-    display: inline-grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: inline-grid; */
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 200%;
+    height: fit-content;
+    /* scale: 150%; */
+    /* grid-template-columns: repeat(2, 1fr); */
     transform: translateX(-50%);
     *{
-        border: 3px, magenta, solid;
+        /* border: 3px, magenta, solid; */
     }
-    
 }
 #divComponentesPC div{
-    width: 200px;
-    height: 200px;
-
+    width: fit-content;
+    height: fit-content;
 }
 #divComponentesPC img{
-        width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     filter: invert(100%);
 }
-
-.botoesComponentesPC{
-    /* border: 3px, magenta, solid; */
-    grid-row: span 2;
-}
-
-.botoesComponentesPC:nth-child(1), .botoesComponentesPC:nth-child(2){
-    grid-row: 2 / span 2;
-}
-.divfantasma::before{
-    
-    width: 0;
+.componentePCIndividual{
+    flex-basis: 200%;
     height: 0;
+}
+#divComponenteRAM{
+    transform: translateY(-20%);
+}
+.espaçoEntreComponentes{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#divComponentePlacaMae, #divComponenteRAM{
+    margin: auto;
 }
