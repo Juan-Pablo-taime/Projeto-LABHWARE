@@ -2,6 +2,9 @@ const dificilDiv = document.querySelectorAll("#dificil");
 const botaoInicial = document.getElementById("botaoInicio");
 const main_text = document.getElementById("main_text");
 const main = document.getElementById("main");
+const parte_1 = document.getElementById("parte-1a");
+const parte_2 = document.getElementById("parte-2");
+const parte_3 = document.getElementById("parte-3");
 // const coresTema = 
 // const corTema = 
 
@@ -42,8 +45,6 @@ class TrocaFundo {
         var butverde = document.getElementById("butverde");
         var butbranco = document.getElementById("butbranco");
         var butciano = document.getElementById("butciano");
-
-
 
         butvermelho.addEventListener("mouseenter", function () {
             document.body.style.backgroundImage = "url('./IMAGENS/vermelho.png')"
@@ -101,9 +102,6 @@ class TrocaFundo {
         });
 
         const menuMontador = new MenuMontador();
-
-
-
     }
 }
 
@@ -114,40 +112,9 @@ class MenuMontador {
             element.addEventListener("click", function () {
                 main.className = "MenuMontador";
                 main_text.className = "MenuMontador";
-                main_text.innerHTML =
-               `
-                <h2> Monte seu PC </h2>
-                <div id="divComponentesPC">
-                    
-                    <div id="divComponenteCPU" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\cpu.png" alt="Processador" id="botaoCPU">
-                    </div>
-                
-                    <div id="divComponenteServer" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\server.png" alt="Gabinete" id="botaoCPU">
-                    </div>
-
-                    <div class="componentePCIndividual"></div>
-
-                    <div id="divComponentePlacaMae" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png" alt="Placa-mãe" id="botaoCPU">
-                    </div>
-
-                    <div class="componentePCIndividual"></div>
-
-                    <div id="divComponenteGC" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\graphic-card.png" alt="Placa de vídeo" id="botaoCPU">
-                    </div>
-
-                    <div id="divComponenteHDD" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\hdd.png" alt="Unidade de armazenamento" id="botaoCPU">
-                    </div>
-                    
-                    <div class="componentePCIndividual"></div>
-                    <div id="divComponenteRAM" class="botoesComponentesPC">
-                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\ram.png" alt="Memória RAM" id="botaoCPU">
-                    </div>
-                `;
+                parte_2.hidden = true;
+                parte_3.hidden = false;
+                // Lógica para os cliques de cada botão de peça individual.
             });
         });
     }
@@ -156,14 +123,10 @@ class MenuMontador {
 botaoInicial.addEventListener("click", function () {
     main_text.className = "colors-theme-text";
     main.className = "colors-theme-text";
-    main_text.innerHTML = `<h2> escolha sua cor </h2> <br>
-            <div id="coresmenu">
-                <input type="button" class="butcores" id="butbranco">
-                <input type="button" class="butcores" id="butvermelho">
-                <input type="button" class="butcores" id="butlaranja">
-                <input type="button" class="butcores" id="butverde">
-                <input type="button" class="butcores" id="butciano">
-            </div>`
+    // main_text.innerHTML = ``
+    botaoInicial.hidden = true;
+    parte_1.hidden = true;
+    parte_2.hidden = false;
     botaoInicial.remove()
     const trocaFundo = new TrocaFundo();
 });

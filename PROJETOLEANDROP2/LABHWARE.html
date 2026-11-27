@@ -16,22 +16,69 @@
 
     <main id="main">
         <div id="main_text" class="main-text">
-            <h2>Montar um<br></h2>
-            <h2 id="pc">PC</h2><br>
-            <h2 id="font-times">não precisa ser</h2><br>
-            <h2 id="dificil">DIFÍCIL</h2>
-           
+            <div id="parte-1a">
+                <h2>Montar um<br></h2>
+                <h2 id="pc">PC</h2><br>
+                <h2 id="font-times">não precisa ser</h2><br>
+                <h2 id="dificil">DIFÍCIL</h2>
+            </div>
+            <div id="parte-2" hidden>
+                <h2> escolha sua cor </h2> <br>
+                <div id="coresmenu">
+                    <input type="button" class="butcores" id="butbranco">
+                    <input type="button" class="butcores" id="butvermelho">
+                    <input type="button" class="butcores" id="butlaranja">
+                    <input type="button" class="butcores" id="butverde">
+                    <input type="button" class="butcores" id="butciano">
+                </div>
+            </div>
+            <div id="parte-3" hidden>
+                <h2> Monte seu PC </h2>
+                <div id="divComponentesPC">
 
+                    <div id="divComponenteCPU" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\cpu.png"
+                            alt="Processador" id="botaoCPU">
+                    </div>
+
+                    <div id="divComponenteServer" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\server.png"
+                            alt="Gabinete" id="botaoCPU">
+                    </div>
+
+                    <div class="componentePCIndividual"></div>
+
+                    <div id="divComponentePlacaMae" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\motherboard.png"
+                            alt="Placa-mãe" id="botaoCPU">
+                    </div>
+
+                    <div class="componentePCIndividual"></div>
+
+                    <div id="divComponenteGC" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\graphic-card.png"
+                            alt="Placa de vídeo" id="botaoCPU">
+                    </div>
+
+                    <div id="divComponenteHDD" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\hdd.png"
+                            alt="Unidade de armazenamento" id="botaoCPU">
+                    </div>
+
+                    <div class="componentePCIndividual"></div>
+
+                    <div id="divComponenteRAM" class="botoesComponentesPC">
+                        <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\ram.png"
+                            alt="Memória RAM" id="botaoCPU">
+                    </div>
+                </div>
+            </div>
         </div>
-
         <input type="button" id="botaoInicio" value="Começar">
-
-
-
     </main>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
