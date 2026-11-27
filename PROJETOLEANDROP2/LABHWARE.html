@@ -35,7 +35,6 @@
             <div id="parte-3" hidden>
                 <h2> Monte seu PC </h2>
                 <div id="divComponentesPC">
-
                     <div id="divComponenteCPU" class="botoesComponentesPC">
                         <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\cpu.png"
                             alt="Processador" id="botaoCPU">
@@ -71,6 +70,43 @@
                         <input type="image" draggable="false" src=".\\IMAGENS\\icons\\pc-parts\\ram.png"
                             alt="Memória RAM" id="botaoCPU">
                     </div>
+                </div>
+
+                <div id="frame-componentes" hidden>
+                    <div id="frame-componentes-filtros">
+                        <div class="cabecalho-filtros">
+                            <h3>Filtros</h3>
+                        </div>
+                        <div class="categoria-filtros">
+                            <h4>Marca:</h4>
+                            <form action="" class="opcoes-filtros">
+                                <div>
+                                    <input type="checkbox" name="marca" id="amd" value="amd">
+                                    <label for="amd">AMD</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="marca" id="intel" value="intel">
+                                    <label for="intel">Intel</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="categoria-filtros">
+                            <h4>Faixa de preço:</h4>
+                            <div class="slider-filtros">
+                                <div class="slider-filtros-fundo"></div>
+                                <div class="slider-filtros-trilha" id="trilha-ativa"></div>
+                                <input type="range" id="preco-min" min="0" max="15000" value="0" step="100">
+                                <input type="range" id="preco-max" min="0" max="15000" value="15000" step="100">
+                            </div>
+                            <p class="valores-preco-filtros">
+                                R$ <span id="texto-min">0</span> — R$ <span id="texto-max">15000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="frame-componentes-real">
+                        <h1>E</h1>
+                    </div>
+
                 </div>
             </div>
         </div>

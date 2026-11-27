@@ -5,6 +5,21 @@ const main = document.getElementById("main");
 const parte_1 = document.getElementById("parte-1a");
 const parte_2 = document.getElementById("parte-2");
 const parte_3 = document.getElementById("parte-3");
+
+const partesPC = document.querySelectorAll(".botoesComponentesPC");
+const botaoParteCPU = document.querySelector("#divComponenteCPU input");
+
+const frameComponentes = document.getElementById("frame-componentes");
+
+const inputMin = document.getElementById('preco-min');
+const inputMax = document.getElementById('preco-max');
+const textoMin = document.getElementById('texto-min');
+const textoMax = document.getElementById('texto-max');
+const trilhaAtiva = document.getElementById('trilha-ativa');
+
+const diferencaMinima = 0;
+const valorMaximoTotal = parseInt(inputMax.max);
+
 // const coresTema = 
 // const corTema = 
 
@@ -14,9 +29,8 @@ const fonts = [
     'Courier New', 'monospace',
     'Comic Sans MS', 'tecnologico', 'Times New Roman', 'Helvetica', 'Impact'
 ];
+
 function trocaFonte() {
-
-
     dificilDiv.forEach(e => {
 
         let lastFontName = fontName;
@@ -34,9 +48,53 @@ if (main_text && main_text.className === "main-text") {
             trocaFonte();
     }, 500);
 }
+
+function atualizarSlider(evento) {
+    let valMin = parseInt(inputMin.value);
+    let valMax = parseInt(inputMax.value);
+
+    if (valMax - valMin < diferencaMinima) {
+        if (evento && evento.target === inputMin) {
+            inputMin.value = valMax - diferencaMinima;
+            valMin = parseInt(inputMin.value);
+        } else {
+            inputMax.value = valMin + diferencaMinima;
+            valMax = parseInt(inputMax.value);
+        }
+    }
+
+    textoMin.textContent = valMin.toLocaleString('pt-BR');
+    textoMax.textContent = valMax.toLocaleString('pt-BR');
+
+    const porcMin = (valMin / valorMaximoTotal) * 100;
+    const porcMax = (valMax / valorMaximoTotal) * 100;
+
+    inputMin.style.zIndex = (valMin >= valorMaximoTotal - 500) ? "4" : "3";
+    trilhaAtiva.style.left = porcMin + '%';
+    trilhaAtiva.style.width = (porcMax - porcMin) + '%';
+}
+
+inputMin.addEventListener('input', atualizarSlider);
+inputMax.addEventListener('input', atualizarSlider);
+
+atualizarSlider();
+
+function componentes() {
+    botaoParteCPU.addEventListener("click", function () {
+        partesPC.forEach((p) => {
+            if (p.id !== "divComponenteCPU")
+                p.className = "botoesComponentesPCSelecionado";
+        });
+        frameComponentes.hidden = false;
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                frameComponentes.className = "is-visible";
+            });
+        });
+    });
+}
+
 // Animação inicial da escolha de cores
-
-
 class TrocaFundo {
     constructor() {
         let clickedButton = false;
@@ -114,7 +172,7 @@ class MenuMontador {
                 main_text.className = "MenuMontador";
                 parte_2.hidden = true;
                 parte_3.hidden = false;
-                // Lógica para os cliques de cada botão de peça individual.
+                componentes();
             });
         });
     }
